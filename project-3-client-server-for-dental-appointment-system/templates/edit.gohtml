@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit an appointment</title>
+</head>
+<body>
+
+{{if .ApptId}}
+
+{{if .Message}}
+<h1>{{.Message}}</h1>
+<h2>Please key in the time if you want to change you edit you appointment else click the return to main menu button to return to the main menu</h2>
+
+
+{{if and .Day .Month .TimeSession}}
+<h1>Selected date is {{.Day}} {{.Month}} {{.Year}} at {{.TimeSession}}</h1>
+
+{{if .DentistList}}
+<ol>
+    {{range $index, $element := .DentistList}}
+    {{if eq $index 0}}
+    <h2>{{$element}}</h2>
+    {{else}}
+    <li>{{$element}}</li>
+    {{end}}
+    {{end}}
+</ol>
+
+{{if .ApptMessage}}
+<h2>{{.ApptMessage}}</h2>
+
+{{else}}
+<form method="post">
+  <input type="text" name="dentist" placeholder="dentist name"><br>
+  <input type="submit" value="Submit">
+</form>
+{{end}}
+{{end}}
+
+{{else}}
+<h2>Choose the timeslot below</h2>
+<ol>
+    {{range .TimeSlot}}
+    <li>{{.}}</li>
+    {{end}}
+</ol>
+<form method="post">
+  <input type="text" name="month" placeholder="month in integer"><br>
+  <input type="text" name="day" placeholder="day in integer"><br>
+  <input type="text" name="time" placeholder="time slot in integer"><br>
+  <input type="submit" value="Submit">
+</form>
+{{end}}
+{{end}}
+
+
+{{else}}
+<h1>Choose the Appointment Id to edit</h1>
+<form method="post">
+  <input type="text" name="apptId" placeholder="appointment id"><br>
+  <input type="submit" value="Submit">
+</form>
+{{end}}
+
+<br><br><br>
+<button type="button" onclick="location.href='/'">Return to Main Menu</button>
+</body>
+</html>

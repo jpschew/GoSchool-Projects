@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Browse Appointment</title>
+</head>
+<body>
+
+<h1>Please key in the dentist name</h1>
+<form method="post">
+    <input type="text" name="dentist" placeholder="dentist name"><br>
+    <input type="submit">
+</form>
+
+{{if .}}
+<ul>
+    {{range $index, $element := .}}
+    {{if eq $index 0}}
+    <h2>{{$element}}</h2>
+    {{else}}
+    <li>{{$element}}</li>
+    {{end}}
+    {{end}}
+</ul>
+{{end}}
+<br><br><br>
+<button type="button" onclick="location.href='/'">Return to Main Menu</button>
+</body>
+</html>

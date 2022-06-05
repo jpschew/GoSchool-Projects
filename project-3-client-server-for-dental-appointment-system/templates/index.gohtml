@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WELCOME PAGE</title>
+</head>
+<body>
+<h1>Welcome to The BEST Dental Clinic!!!</h1>
+{{if .First}}
+Welcome User {{.Username}}<br>
+Your first name is {{.First}}<br>
+Your last name is {{.Last}}<br>
+{{if .Admin}}
+<h2><a href="/browse">Browse Dentist Appointment</a></h2>
+<h2><a href="/search">Search for Appointment</a></h2>
+<h2><a href="/edit">Edit an Appointment</a></h2>
+{{else}}
+<h2><a href="/make">Make an Appointment</a></h2>
+<h2><a href="/list">List Dentist Available Time</a></h2>
+<h2><a href="/edit">Edit an Appointment</a></h2>
+{{end}}
+<button type="button" onclick="location.href='/logout'">Log Out</button>
+{{else}}
+<h2>Please Log In to your account or Sign up for a new account to continue!</h2>
+<button type="button" onclick="location.href='/signup'">Sign Up</button>
+<button type="button" onclick="location.href='/login'">Log In</button>
+{{end}}
+
+
+</body>
+</html>

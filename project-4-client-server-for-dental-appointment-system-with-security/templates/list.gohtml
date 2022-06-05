@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List Available Dentist Time</title>
+</head>
+<body>
+
+{{if and .Day .Month .DentistList}}
+
+<h1>Selected date is {{.Day}} {{.Month}} {{.Year}}</h1>
+<ol>
+    {{range $index, $element := .DentistList}}
+    {{if eq $index 0}}
+    <h2>{{$element}}</h2>
+    {{else}}
+    <li>{{$element}}</li>
+    {{end}}
+    {{end}}
+</ol>
+
+{{if .DentistName}}
+
+{{if .TimeSlot}}
+<h2>Available Time Slot for {{.DentistName}} are shown below:</h2>
+<ol>
+    {{range .TimeSlot}}
+    <li>{{.}}</li>
+    {{end}}
+</ol>
+{{end}}
+
+{{else}}
+<h2>Choose a dentist to list his/her available time</h2>
+<form method="post">
+    <input type="text" name="dentist" placeholder="dentist"><br>
+    <input type="submit">
+</form>
+{{end}}
+
+{{else}}
+<h1>Please key in the date</h1>
+<form method="post">
+    <input type="text" name="month" placeholder="month in integer"><br>
+    <input type="text" name="day" placeholder="day in integer"><br>
+    <input type="submit">
+</form>
+{{end}}
+
+<br><br><br>
+<button type="button" onclick="location.href='/'">Return to Main Menu</button>
+
+</body>
+</html>

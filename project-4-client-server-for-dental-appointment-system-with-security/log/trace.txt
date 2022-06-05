@@ -1,0 +1,11 @@
+TRACE: 2022/05/18 20:35:55 utils.go:190: adminhas logged in.
+TRACE: 2022/05/18 20:36:30 utils.go:190: admin has logged in.
+TRACE: 2022/05/18 20:52:36 utils.go:191: Password is not hashed when logging in.
+TRACE: 2022/05/18 21:39:40 utils.go:191: admin has logged in.
+TRACE: 2022/05/18 21:39:47 utils.go:191: admin is searching for an appointment.
+TRACE: 2022/05/18 21:40:05 utils.go:191: admin has keyed in invalid dentist while editing appointment.
+TRACE: 2022/05/18 21:40:06 utils.go:191: admin has edited an appointment.
+TRACE: 2022/05/18 21:40:15 utils.go:191: New user admin has logged out.
+TRACE: 2022/05/18 21:40:22 utils.go:191: admin has logged in.
+TRACE: 2022/05/18 21:40:35 utils.go:191: admin has edited an appointment.
+TRACE: 2022/05/18 21:40:49 utils.go:191: New user admin has logged out.

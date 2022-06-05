@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Appointment Id</title>
+</head>
+<body>
+<h1>Please key in the Appointment Id</h1>
+<form method="post">
+    <input type="text" name="apptId" placeholder="appointment id"><br>
+    <input type="submit">
+</form>
+
+{{if .}}
+<h2>{{.}}</h2>
+{{end}}
+
+<br><br><br>
+<button type="button" onclick="location.href='/'">Return to Main Menu</button>
+</body>
+</html>
